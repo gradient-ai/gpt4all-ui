@@ -13,6 +13,8 @@ COPY ./pyGpt4All/config.py /srv/pyGpt4All/config.py
 COPY ./pyGpt4All/extension.py /srv/pyGpt4All/extension.py
 COPY ./static /srv/static
 COPY ./templates /srv/templates
-
-# COPY ./models /srv/models  # Mounting model is more efficient
+COPY ./configs /srv/configs/
+COPY ./personalities /srv/personalities/
+COPY ./databases /srv/databases/
+COPY ./models /srv/models/
 CMD ["python", "app.py", "--host", "0.0.0.0", "--port", "9600", "--db_path", "data/database.db"]
